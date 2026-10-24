@@ -32,7 +32,7 @@ hasCJKLanguage = true
 # ============================================================
 [params]
   env = "production"
-  author = "Zhenxuan Pan"
+  author = "Zhenxuan"
   defaultTheme = "auto"          # auto / light / dark
   mainSections = ["posts"]
 

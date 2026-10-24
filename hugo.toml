@@ -1,0 +1,181 @@
+# ============================================================
+#  站点基础配置
+# ============================================================
+baseURL = "https://zhenxuanpan.github.io/"
+title = "Zhenxuan's Blog"
+theme = "PaperMod"
+
+# 默认语言为中文，中文页面在根路径，英文页面在 /en/ 下
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = false
+
+enableRobotsTXT = true
+enableEmoji = true
+hasCJKLanguage = true
+
+[pagination]
+  pagerSize = 10
+
+# 首页额外输出 JSON，供站内搜索使用
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# 允许在 Markdown 中直接嵌入 HTML（仅用于自己撰写的内容）
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
+
+# ============================================================
+#  全局参数
+# ============================================================
+[params]
+  env = "production"
+  author = "Zhenxuan Pan"
+  defaultTheme = "auto"          # auto / light / dark
+  mainSections = ["posts"]
+
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowPostNavLinks = true
+  ShowShareButtons = false
+  ShowRssButtonInSectionTermList = true
+  ShowAllPagesInArchive = true
+  ShowFullTextinRSS = true
+  displayFullLangName = true
+
+  [params.assets]
+    favicon = "favicon.ico"
+    favicon16x16 = "favicon-16x16.png"
+    favicon32x32 = "favicon-32x32.png"
+
+  # 每篇文章底部显示“编辑此页”链接
+  [params.editPost]
+    URL = "https://github.com/zhenxuanpan/zhenxuanpan.github.io/edit/main/content"
+    appendFilePath = true
+    Text = "编辑此页"
+
+  # 站内搜索（Fuse.js 参数）
+  [params.fuseOpts]
+    iscasesensitive = false
+    shouldsort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minmatchcharlength = 1
+    keys = ["title", "permalink", "summary", "content"]
+
+# ============================================================
+#  中文
+# ============================================================
+[languages.zh]
+  label = "中文"
+  locale = "zh-CN"
+  weight = 1
+  title = "Zhenxuan 的博客"
+
+  [languages.zh.params]
+    description = "记录技术、项目与生活的中文博客。"
+
+    [languages.zh.params.homeInfoParams]
+      Title = "你好，我是 Zhenxuan 👋"
+      Content = "这里记录我的技术笔记、开源项目与生活随笔。\n\n欢迎随意浏览，也欢迎通过 [GitHub](https://github.com/zhenxuanpan) 与我交流。"
+      AlignSocialIconsTo = "center"
+
+    [[languages.zh.params.socialIcons]]
+      name = "github"
+      url = "https://github.com/zhenxuanpan"
+
+    [[languages.zh.params.socialIcons]]
+      name = "rss"
+      url = "/index.xml"
+
+  [languages.zh.menu]
+    [[languages.zh.menu.main]]
+      identifier = "posts"
+      name = "文章"
+      url = "/posts/"
+      weight = 10
+
+    [[languages.zh.menu.main]]
+      identifier = "archives"
+      name = "归档"
+      url = "/archives/"
+      weight = 20
+
+    [[languages.zh.menu.main]]
+      identifier = "tags"
+      name = "标签"
+      url = "/tags/"
+      weight = 30
+
+    [[languages.zh.menu.main]]
+      identifier = "search"
+      name = "搜索"
+      url = "/search/"
+      weight = 40
+
+    [[languages.zh.menu.main]]
+      identifier = "about"
+      name = "关于"
+      url = "/about/"
+      weight = 50
+
+# ============================================================
+#  English
+# ============================================================
+[languages.en]
+  label = "English"
+  locale = "en"
+  weight = 2
+  title = "Zhenxuan's Blog"
+
+  [languages.en.params]
+    description = "Notes on technology, projects, and life."
+
+    [languages.en.params.homeInfoParams]
+      Title = "Hi, I'm Zhenxuan 👋"
+      Content = "I write about technology, open-source projects, and life.\n\nFeel free to look around, or reach me on [GitHub](https://github.com/zhenxuanpan)."
+      AlignSocialIconsTo = "center"
+
+    [[languages.en.params.socialIcons]]
+      name = "github"
+      url = "https://github.com/zhenxuanpan"
+
+    [[languages.en.params.socialIcons]]
+      name = "rss"
+      url = "/en/index.xml"
+
+  [languages.en.menu]
+    [[languages.en.menu.main]]
+      identifier = "posts"
+      name = "Posts"
+      url = "/posts/"
+      weight = 10
+
+    [[languages.en.menu.main]]
+      identifier = "archives"
+      name = "Archives"
+      url = "/archives/"
+      weight = 20
+
+    [[languages.en.menu.main]]
+      identifier = "tags"
+      name = "Tags"
+      url = "/tags/"
+      weight = 30
+
+    [[languages.en.menu.main]]
+      identifier = "search"
+      name = "Search"
+      url = "/search/"
+      weight = 40
+
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/about/"
+      weight = 50
